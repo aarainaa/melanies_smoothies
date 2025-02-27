@@ -1,13 +1,7 @@
 # Import python packages
 import streamlit as st
 from snowflake.snowpark.functions import col
-helpful_links = [
-    "https://docs.streamlit.io",
-    "https://docs.snowflake.com/en/developer-guide/streamlit/about-streamlit",
-    "https://github.com/Snowflake-Labs/snowflake-demo-streamlit",
-    "https://docs.snowflake.com/en/release-notes/streamlit-in-snowflake"
-]
-
+import requests
 # Write directly to the app
 st.title("Customise Your Smoothie :cup_with_straw:")
 st.write(
@@ -42,6 +36,9 @@ if ingredients_list:
 
   #st.write(my_insert_stmt)
   
+
+smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+st.text(smoothiefroot_response)
 
 time_to_insert = st.button('Submit Order')
 if time_to_insert:
