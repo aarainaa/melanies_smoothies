@@ -16,8 +16,8 @@ if my_dataframe:
   submitted= st.button('Submit')
   if submitted:
    
-    og_dataset = session.table("smoothies.public.orders")
-    edited_dataset = session.create_dataframe(editable_df)
+     og_dataset = session.table("smoothies.public.orders")
+     edited_dataset = session.create_dataframe(editable_df)
     
      try: 
       
