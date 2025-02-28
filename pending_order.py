@@ -12,8 +12,9 @@ st.write(
 session=get_active_session()
 my_dataframe = session.table("smoothies.public.orders").filter(col("ORDER_FILLED")==0).collect()
 if my_dataframe:
-  editable_df = st.experimental_data_editor(my_dataframe)
+  editable_df = st.data_editor(my_dataframe)
   submitted= st.button('Submit')
+    
   if submitted:
    
      og_dataset = session.table("smoothies.public.orders")
